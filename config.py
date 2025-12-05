@@ -1,11 +1,11 @@
 # =============================================================================
-# Configuration for Content Finn / Intercom Velocity Engine
+# Configuration for Content Fin / Intercom Velocity Engine
 # Note: app.py uses inline prompts for the chat interface. This file is used
 # by utils/generator.py for the batch/JSON generation mode (alternative API).
 # =============================================================================
 
 # Branding Configuration
-BRAND_NAME = "Content Finn"
+BRAND_NAME = "Content Fin"
 BRAND_PRIMARY_COLOR = "#0057ff"  # Intercom Blue
 BRAND_TEXT_COLOR = "#FFFFFF" 
 BRAND_BG_COLOR = "#111214"

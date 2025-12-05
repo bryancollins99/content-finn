@@ -1,10 +1,10 @@
-# Content Finn | Intercom Velocity Engine
+# Content Fin | Intercom Velocity Engine
 
 A prototype AI copywriter trained on Intercom's style guide. Built to demonstrate high-velocity content operations for the Director of Content role.
 
 ## Features
 
-- **Content Finn Chat**: Paste any blog post or content, get instant multi-channel drafts (LinkedIn, Twitter, TikTok, RAG-optimized)
+- **Content Fin Chat**: Paste any blog post or content, get instant multi-channel drafts (LinkedIn, Twitter, TikTok, RAG-optimized)
 - **Draft History**: All generated content saved for review
 - **Style Guide**: Built-in reference for Intercom's voice and tone
 

@@ -9,7 +9,7 @@ load_dotenv()
 
 # --- PAGE CONFIG ---
 st.set_page_config(
-    page_title="Content Finn | Intercom",
+    page_title="Content Fin | Intercom",
     page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -77,7 +77,7 @@ CONTENT_TYPES = {
     "linkedin": "💼 LinkedIn Post",
     "x_post": "𝕏 Post",
     "youtube": "🎬 YouTube Script",
-    "finn": "🤖 Finn Answer (RAG)",
+    "finn": "🤖 Fin Answer (RAG)",
     "landing": "🏠 Landing Page Copy",
     "email": "📧 Email Campaign",
     "seo": "🔍 SEO Headlines & Meta"
@@ -105,7 +105,7 @@ if "selected_types" not in st.session_state:
 
 # --- SIDEBAR ---
 with st.sidebar:
-    # Clickable logo - returns to home (Content Finn)
+    # Clickable logo - returns to home (Content Fin)
     logo_col1, logo_col2 = st.columns([1, 3])
     with logo_col1:
         st.markdown(INTERCOM_LOGO_SVG, unsafe_allow_html=True)
@@ -115,7 +115,7 @@ with st.sidebar:
     st.markdown("---")
     
     # Simple vertical navigation
-    if st.button("⚡ Content Finn", use_container_width=True):
+    if st.button("⚡ Content Fin", use_container_width=True):
         st.session_state.current_page = "finn"
         st.session_state.messages = []  # Reset chat
         st.rerun()
@@ -355,7 +355,7 @@ if st.session_state.current_page == "guide":
 
 elif st.session_state.current_page == "demo":
     st.title("📺 Demo: AI-First Support Article")
-    st.markdown("*This is a hardcoded demo showing example output from Content Finn.*")
+    st.markdown("*This is a hardcoded demo showing example output from Content Fin.*")
     st.markdown("---")
     
     # Source article info
@@ -385,7 +385,7 @@ Without intentional ownership, AI performance inevitably plateaus. The teams sca
     
     # Tabs for different content types
     demo_tab1, demo_tab2, demo_tab3, demo_tab4, demo_tab5, demo_tab6, demo_tab7 = st.tabs([
-        "💼 LinkedIn", "𝕏 Post", "🎬 YouTube", "🤖 Finn RAG", "🏠 Landing", "📧 Email", "🔍 SEO"
+        "💼 LinkedIn", "𝕏 Post", "🎬 YouTube", "🤖 Fin RAG", "🏠 Landing", "📧 Email", "🔍 SEO"
     ])
     
     with demo_tab1:
@@ -465,7 +465,7 @@ Link in description to the full breakdown.
     
     with demo_tab4:
         st.markdown("""
-**🤖 Finn Answer (RAG)**
+**🤖 Fin Answer (RAG)**
 
 An AI-first support team requires four key roles for sustained success: 
 
@@ -555,9 +555,9 @@ AI fails without ownership. Learn the 4 roles—AI Ops Lead, Knowledge Manager, 
         st.download_button("📥 Download", "Meta Title: AI-First Support Team...", file_name="seo_meta.txt", key="demo_dl_seo")
     
     st.markdown("---")
-    st.success("✨ **This is example output.** Go to Content Finn to generate your own content from any article or URL.")
+    st.success("✨ **This is example output.** Go to Content Fin to generate your own content from any article or URL.")
     
-    if st.button("⚡ Try Content Finn with your own content", use_container_width=True):
+    if st.button("⚡ Try Content Fin with your own content", use_container_width=True):
         st.session_state.current_page = "finn"
         st.rerun()
 
@@ -566,7 +566,7 @@ elif st.session_state.current_page == "history":
     st.markdown("---")
     
     if not st.session_state.draft_history:
-        st.info("No drafts yet. Go to Content Finn and paste some content to generate drafts.")
+        st.info("No drafts yet. Go to Content Fin and paste some content to generate drafts.")
     else:
         for i, draft in enumerate(reversed(st.session_state.draft_history)):
             with st.expander(f"Draft {len(st.session_state.draft_history) - i}: {draft.get('preview', 'Untitled')[:50]}..."):
@@ -581,7 +581,7 @@ elif st.session_state.current_page == "history":
                     mime="text/plain"
                 )
 
-else:  # Content Finn (default)
+else:  # Content Fin (default)
     # Handle example URL if triggered from sidebar
     if "example_url" in st.session_state and st.session_state.example_url:
         url = st.session_state.example_url
@@ -603,7 +603,7 @@ else:  # Content Finn (default)
         STRATEGY_RESPONSES = {
             "pillars": {
                 "user_msg": "🎯 Show me your content pillar strategy for Intercom",
-                "response": """**Content Finn**
+                "response": """**Content Fin**
 
 Based on Intercom's positioning and 2025 market dynamics, here are **3 content pillars** I'd prioritize as Director of Content:
 
@@ -677,7 +677,7 @@ This creates a content engine that feeds the full funnel while reinforcing Inter
             },
             "calendar": {
                 "user_msg": "📅 Show me a Q1 content calendar for Intercom",
-                "response": """**Content Finn**
+                "response": """**Content Fin**
 
 Here's a strategic **Q1 2025 Content Calendar** aligned with Intercom's priorities and market timing:
 
@@ -743,7 +743,7 @@ Each flagship piece becomes 10+ assets:
     → 1 Fin Answer (RAG)
 ```
 
-This is where Content Finn accelerates the team—turning 1 piece into 10 in minutes, not days.
+This is where Content Fin accelerates the team—turning 1 piece into 10 in minutes, not days.
 
 ---
 
@@ -781,9 +781,9 @@ This is where Content Finn accelerates the team—turning 1 piece into 10 in min
         st.session_state.messages = [
             {
                 "role": "assistant",
-                "content": """**Content Finn** (v0.5)
+                "content": """**Content Fin** (v0.5)
 
-Hello. I am Content Finn. I am trained on the Intercom Style Guide.
+Hello. I am Content Fin. I am trained on the Intercom Style Guide.
 
 **Select your output formats below**, then paste a blog post, URL, or content.
 
@@ -791,7 +791,7 @@ Available formats:
 - 💼 LinkedIn post
 - 𝕏 Post
 - 🎬 YouTube script
-- 🤖 Finn Answer (RAG)
+- 🤖 Fin Answer (RAG)
 - 🏠 Landing Page Copy
 - 📧 Email Campaign
 - 🔍 SEO Headlines & Meta
@@ -842,7 +842,7 @@ Available formats:
     # Text input (key changes after submission to clear it)
     user_input = st.text_area(
         "Input",
-        placeholder="Paste content, a URL, or ask Finn...",
+        placeholder="Paste content, a URL, or ask Fin...",
         height=100,
         label_visibility="collapsed",
         key=f"user_input_{st.session_state.input_key}"
@@ -915,7 +915,7 @@ Available formats:
             success = False  # Track success to control rerun
             
             api_key = os.environ.get("ANTHROPIC_API_KEY")
-            placeholder.markdown("**Content Finn**\n\n⏳ Generating...")
+            placeholder.markdown("**Content Fin**\n\n⏳ Generating...")
             
             # Determine if this is a "paste" (long content) or a request
             is_content_paste = len(prompt) > 300
@@ -936,7 +936,7 @@ Available formats:
                         "youtube": """**🎬 YouTube Script (2-3 min)**
 
 [Write a talking head script with [Visual Cues] in brackets. Conversational but professional tone.]""",
-                        "finn": """**🤖 Finn Answer (RAG)**
+                        "finn": """**🤖 Fin Answer (RAG)**
 
 [Write a factual, dense summary optimized for AI retrieval. No fluff.]""",
                         "landing": """**🏠 Landing Page Copy**
@@ -971,7 +971,7 @@ Available formats:
                     
                     format_output = "\n\n---\n\n".join(format_sections)
                     
-                    system_prompt = f"""You are Content Finn, Intercom's AI copywriter.
+                    system_prompt = f"""You are Content Fin, Intercom's AI copywriter.
 
 The user has pasted content. Transform it into the requested assets using Intercom's voice (confident, simple, futurist, punchy).
 
@@ -983,7 +983,7 @@ IMPORTANT RULES:
 
 Format your response EXACTLY like this:
 
-**Content Finn**
+**Content Fin**
 
 Here are your drafts:
 
@@ -991,7 +991,7 @@ Here are your drafts:
 
 {format_output}"""
                 else:
-                    system_prompt = """You are Content Finn, Intercom's AI copywriter.
+                    system_prompt = """You are Content Fin, Intercom's AI copywriter.
 
 Intercom's Voice:
 - CONFIDENT: "We built X," not "We tried to build X."
@@ -1000,10 +1000,10 @@ Intercom's Voice:
 - PUNCHY: Sentence fragments.
 - NO HASHTAGS ever.
 
-Always start with "**Content Finn**" on its own line."""
+Always start with "**Content Fin**" on its own line."""
 
                 try:
-                    placeholder.markdown("**Content Finn**\n\n⏳ Generating...")
+                    placeholder.markdown("**Content Fin**\n\n⏳ Generating...")
                     
                     # Debug: Show that we're attempting API call
                     print(f"[DEBUG] Calling Anthropic API with prompt: {prompt[:100]}...")
@@ -1104,7 +1104,7 @@ Fourth, Automation Specialist. They build workflows so the AI doesn't just answe
 Without these roles, AI plateaus. With them, it compounds. The question isn't whether your AI is good enough. It's whether you're owning it.
 
 Link in description to the full breakdown.""",
-                        "finn": """**🤖 Finn Answer (RAG)**
+                        "finn": """**🤖 Fin Answer (RAG)**
 
 An AI-first support team requires four key roles for sustained success: (1) AI Operations Lead – monitors daily performance, catches drift, routes fixes; (2) Knowledge Manager – maintains accurate help content; (3) Conversation Designer – shapes AI tone and handles edge cases; (4) Automation Specialist – builds action workflows. Without intentional ownership, AI performance inevitably plateaus. Teams scaling AI fastest treat it as a product requiring dedicated ownership, not a tool that runs itself.""",
                         "landing": """**🏠 Landing Page Copy**
@@ -1164,14 +1164,14 @@ AI fails without ownership. Learn the 4 roles—AI Ops Lead, Knowledge Manager, 
                     }
                     
                     selected_types = st.session_state.get("selected_types", ["linkedin", "x_post"])
-                    demo_parts = ["**Content Finn**\n\nHere are your drafts:"]
+                    demo_parts = ["**Content Fin**\n\nHere are your drafts:"]
                     for content_type in selected_types:
                         if content_type in demo_sections:
                             demo_parts.append(demo_sections[content_type])
                     
                     demo = "\n\n---\n\n".join(demo_parts)
                 else:
-                    demo = """**Content Finn**
+                    demo = """**Content Fin**
 
 I'm in demo mode (no API key). Here's a sample of what I can create:
 
@@ -1180,7 +1180,7 @@ I'm in demo mode (no API key). Here's a sample of what I can create:
 
 Your customers don't want to wait. They want answers now.
 
-That's why we built Finn.
+That's why we built Fin.
 
 Not a chatbot. An AI agent that actually resolves issues.
 

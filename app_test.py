@@ -6,7 +6,7 @@ import anthropic
 # Load environment variables
 load_dotenv()
 
-st.title("🧪 Content Finn Test Lab")
+st.title("🧪 Content Fin Test Lab")
 
 # API Key Check
 api_key = os.environ.get("ANTHROPIC_API_KEY")
