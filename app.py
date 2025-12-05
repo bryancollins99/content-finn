@@ -122,11 +122,10 @@ with st.sidebar:
     
     st.markdown("---")
     
-    # Example button
+    # Demo button - shows hardcoded example output
     st.caption("Quick Start")
-    if st.button("🚀 Try: AI-First Support Article", use_container_width=True):
-        st.session_state.example_url = "https://www.intercom.com/blog/inside-the-ai-first-support-team/"
-        st.session_state.current_page = "finn"
+    if st.button("📺 View Demo Output", use_container_width=True):
+        st.session_state.current_page = "demo"
         st.rerun()
     
     st.markdown("---")
@@ -347,6 +346,214 @@ if st.session_state.current_page == "guide":
         
         Set time aside each week for 1:1 human connection.
         """)
+
+elif st.session_state.current_page == "demo":
+    st.title("📺 Demo: AI-First Support Article")
+    st.markdown("*This is a hardcoded demo showing example output from Content Finn.*")
+    st.markdown("---")
+    
+    # Source article info
+    st.markdown("### 📎 Source Article")
+    st.info("**Inside the AI-First Support Team** — [intercom.com/blog](https://www.intercom.com/blog/inside-the-ai-first-support-team/)")
+    
+    with st.expander("View Original Content (excerpt)", expanded=False):
+        st.markdown("""
+AI doesn't fail because the model is bad. It fails because ownership is missing.
+
+Most support teams treat AI like software—deploy it, forget it. But AI agents need daily care. A 2% accuracy dip becomes 10% within a week without monitoring.
+
+Teams like Rocket Money and Anthropic are hiring AI Operations Leads specifically to prevent this drift. The role is emerging as one of the most critical in modern support organizations.
+
+We've identified four key roles that make AI-first support teams successful:
+
+1. **AI Operations Lead** — The "air-traffic controller" who monitors performance daily
+2. **Knowledge Manager** — Keeps content accurate and complete  
+3. **Conversation Designer** — Shapes how AI sounds and responds
+4. **Automation Specialist** — Builds workflows that take action
+
+Without intentional ownership, AI performance inevitably plateaus. The teams scaling AI fastest treat it as a product requiring dedicated ownership, not a tool that runs itself.
+        """)
+    
+    st.markdown("---")
+    st.markdown("### 🎯 Generated Content")
+    
+    # Tabs for different content types
+    demo_tab1, demo_tab2, demo_tab3, demo_tab4, demo_tab5, demo_tab6, demo_tab7 = st.tabs([
+        "💼 LinkedIn", "𝕏 Post", "🎬 YouTube", "🤖 Finn RAG", "🏠 Landing", "📧 Email", "🔍 SEO"
+    ])
+    
+    with demo_tab1:
+        st.markdown("""
+**💼 LinkedIn Post**
+
+AI doesn't fail because the model is bad.
+
+It fails because ownership is missing.
+
+We've been studying what separates teams that scale AI from teams that stall. The difference isn't budget. It's not technology. It's four roles:
+
+1. AI Operations Lead – the "air-traffic controller" who monitors performance daily
+2. Knowledge Manager – keeps content accurate and complete
+3. Conversation Designer – shapes how AI sounds and responds
+4. Automation Specialist – builds workflows that take action
+
+Without intentional ownership, a 2% dip becomes a 10% drop within days.
+
+The teams winning at AI aren't hoping it works. They're treating it like a product that needs a team.
+
+Which of these roles does your org have today?
+        """)
+        st.download_button("📥 Download", "AI doesn't fail because the model is bad...", file_name="linkedin_post.txt", key="demo_dl_linkedin")
+    
+    with demo_tab2:
+        st.markdown("""
+**𝕏 Post**
+
+AI doesn't fail because the model is bad. It fails because ownership is missing. 
+
+The teams scaling AI fastest have 4 roles: AI Ops Lead, Knowledge Manager, Conversation Designer, Automation Specialist. 
+
+No ownership = inevitable drift.
+        """)
+        st.download_button("📥 Download", "AI doesn't fail because the model is bad...", file_name="x_post.txt", key="demo_dl_x")
+    
+    with demo_tab3:
+        st.markdown("""
+**🎬 YouTube Script (2-3 min)**
+
+[Open on host at desk]
+
+Why does AI work brilliantly for some support teams and completely stall for others?
+
+[Cut to graphic: "AI Performance Over Time" chart showing drift]
+
+It's not the model. It's not the data. It's ownership.
+
+[Back to host]
+
+I've been studying teams that scale AI successfully, and they all have something in common: four distinct roles.
+
+[Show role 1 graphic]
+
+First, the AI Operations Lead. Think of them as an air-traffic controller. They watch performance daily, catch drift before it becomes disaster. A 2% dip? They see it. They fix it.
+
+[Show role 2 graphic]
+
+Second, Knowledge Manager. They ensure the AI has accurate, complete information. Stale docs = stale answers.
+
+[Show role 3 graphic]
+
+Third, Conversation Designer. They shape tone, personality, edge cases. They make the AI sound human, not robotic.
+
+[Show role 4 graphic]
+
+Fourth, Automation Specialist. They build workflows so the AI doesn't just answer—it takes action.
+
+[Back to host, closing]
+
+Without these roles, AI plateaus. With them, it compounds. The question isn't whether your AI is good enough. It's whether you're owning it.
+
+Link in description to the full breakdown.
+        """)
+        st.download_button("📥 Download", "[Open on host at desk]...", file_name="youtube_script.txt", key="demo_dl_yt")
+    
+    with demo_tab4:
+        st.markdown("""
+**🤖 Finn Answer (RAG)**
+
+An AI-first support team requires four key roles for sustained success: 
+
+(1) **AI Operations Lead** – monitors daily performance, catches drift, routes fixes
+(2) **Knowledge Manager** – maintains accurate help content
+(3) **Conversation Designer** – shapes AI tone and handles edge cases
+(4) **Automation Specialist** – builds action workflows
+
+Without intentional ownership, AI performance inevitably plateaus. Teams scaling AI fastest treat it as a product requiring dedicated ownership, not a tool that runs itself.
+        """)
+        st.download_button("📥 Download", "An AI-first support team requires four key roles...", file_name="finn_answer.txt", key="demo_dl_finn")
+    
+    with demo_tab5:
+        st.markdown("""
+**🏠 Landing Page Copy**
+
+---
+
+**Hero Headline:**
+# AI Doesn't Fail. Ownership Does.
+
+**Subheadline:**
+The teams scaling AI fastest have four roles working together. Learn how to build an AI-first support organization that compounds instead of plateaus.
+
+**Feature Bullets:**
+• **AI Operations Lead:** Your air-traffic controller for AI performance
+• **Knowledge Manager:** Keeps your AI accurate and up-to-date
+• **Conversation Designer:** Makes your AI sound human
+• **Automation Specialist:** Builds workflows that take action
+
+**CTA:**
+→ Build Your AI Team
+        """)
+        st.download_button("📥 Download", "AI Doesn't Fail. Ownership Does...", file_name="landing_page.txt", key="demo_dl_landing")
+    
+    with demo_tab6:
+        st.markdown("""
+**📧 Email Campaign**
+
+---
+
+**Subject:** Why your AI is drifting (and how to fix it)
+
+**Preview:** It's not the model. It's the missing ownership.
+
+---
+
+Hey {{first_name}},
+
+Here's something we've learned from teams scaling AI: performance doesn't plateau because the technology fails.
+
+It plateaus because no one owns it.
+
+The teams seeing compounding gains have four roles in place:
+→ AI Ops Lead (catches drift before it spreads)
+→ Knowledge Manager (keeps content sharp)
+→ Conversation Designer (nails the tone)
+→ Automation Specialist (builds action workflows)
+
+Without these? A 2% dip becomes 10% within days.
+
+We wrote up exactly what each role does day-to-day. Worth a read if you're seeing your AI performance flatten.
+
+[Read the Breakdown]
+
+— The Intercom Team
+        """)
+        st.download_button("📥 Download", "Subject: Why your AI is drifting...", file_name="email_campaign.txt", key="demo_dl_email")
+    
+    with demo_tab7:
+        st.markdown("""
+**🔍 SEO Headlines & Meta**
+
+---
+
+**Meta Title:**
+AI-First Support Team: 4 Roles That Make AI Actually Work | Intercom
+
+**Meta Description:**
+AI fails without ownership. Learn the 4 roles—AI Ops Lead, Knowledge Manager, Conversation Designer, Automation Specialist—that separate scaling teams from stalling ones.
+
+**H1 Alternatives:**
+• The 4 Roles Every AI-First Support Team Needs
+• Why AI Plateaus (And the Team Structure That Fixes It)
+• Inside the AI-First Support Team: Roles, Responsibilities, Results
+        """)
+        st.download_button("📥 Download", "Meta Title: AI-First Support Team...", file_name="seo_meta.txt", key="demo_dl_seo")
+    
+    st.markdown("---")
+    st.success("✨ **This is example output.** Go to Content Finn to generate your own content from any article or URL.")
+    
+    if st.button("⚡ Try Content Finn with your own content", use_container_width=True):
+        st.session_state.current_page = "finn"
+        st.rerun()
 
 elif st.session_state.current_page == "history":
     st.title("🕒 Draft History")
