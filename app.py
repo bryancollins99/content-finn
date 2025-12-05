@@ -37,6 +37,12 @@ st.markdown("""
     header {visibility: hidden;}
     footer {visibility: hidden;}
     
+    .main .block-container {
+        max-width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
     section[data-testid="stSidebar"] {
         background-color: #0a0a0a;
     }
